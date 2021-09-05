@@ -2,15 +2,16 @@ package com.org.skillzag.payment.controller;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
 
 import com.google.gson.Gson;
 import com.razorpay.Order;
@@ -19,6 +20,8 @@ import com.razorpay.RazorpayException;
 import com.org.skillzag.payment.model.Customer;
 import com.org.skillzag.payment.model.RazorPay;
 import com.org.skillzag.payment.model.Response;
+import org.springframework.web.servlet.ModelAndView;
+
 /**
  * 
  * @author rahul
@@ -37,13 +40,18 @@ public class SkillZagResource {
 		this.client =  new RazorpayClient(SECRET_ID, SECRET_KEY); 
 	}
 	
-	@RequestMapping(value="/")
+	@GetMapping(value="/")
 	public String getHome() {
 		return "redirect:/home";
 	}
-	@RequestMapping(value="/home")
-	public String getHomeInit() {
-		return "home";
+	@GetMapping(value="/home")
+	public ModelAndView getHomeInit() {
+		String viewName = "payment";
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("subscriptionID" , "2132434fasdhs");
+		modelAndView.addObject("courseName" , "Test Course");
+		modelAndView.setViewName(viewName);
+		return modelAndView;
 	}
 	
 	@RequestMapping(value="/createPayment", method=RequestMethod.POST)

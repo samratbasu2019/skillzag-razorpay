@@ -25,11 +25,19 @@
         <form id="msform">
 
             <div class="form-group">
-                <p>Subscription ID: ${subscriptionID}</p>
+                <p>Subscription ID:
+                <#if subscriptionID?has_content>
+                     ${subscriptionID}
+                </#if>
+                </p>
             </div>
 
             <div class="form-group">
-                <p>Course Name: ${courseName}</p>
+                <p>Course Name:
+                <#if courseName?has_content>
+                    ${courseName}
+                 </#if>
+                </p>
             </div>
 
             <div class="form-group">
