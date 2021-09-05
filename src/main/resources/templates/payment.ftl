@@ -43,7 +43,7 @@
             <div class="form-group">
                             <p>Payment will be made for the user-id:
                             <#if userID?has_content>
-                                ${userID}
+                                <b>${userID}</b>
                              </#if>
                             </p>
              </div>
