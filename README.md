@@ -1,12 +1,12 @@
-## sample-razor-pay-spring-java
+## skillzagrazorpay
 
-A Simple application developed for using Razor pay with Java.
+A skillzagrazorpay for using Razor pay with Java.
 
 These options are used:
 
 - Spring Boot
 - Maven
-- Thymeleaf
+- FreeMarker
 - Bootstrap
 
 Before Running this project create an account in RazorPay **(https://dashboard.razorpay.com/#/access/signup)** Generate secretID and secretKey. save this values.
