@@ -41,6 +41,14 @@
             </div>
 
             <div class="form-group">
+                            <p>Payment will be made for the user-id:
+                            <#if userID?has_content>
+                                ${userID}
+                             </#if>
+                            </p>
+             </div>
+
+            <div class="form-group">
                 <label for="email">Name</label>
                 <input type="text" class="form-control" id="customerName" name="customerName"
                        placeholder="Enter Customer Name" required="required">

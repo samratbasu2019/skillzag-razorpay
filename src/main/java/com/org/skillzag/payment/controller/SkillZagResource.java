@@ -50,6 +50,7 @@ public class SkillZagResource {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("subscriptionID" , "2132434fasdhs");
 		modelAndView.addObject("courseName" , "Test Course");
+		modelAndView.addObject("userID" , "samtina.basu@gmail.com");
 		modelAndView.setViewName(viewName);
 		return modelAndView;
 	}
