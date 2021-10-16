@@ -28,6 +28,7 @@ import org.springframework.web.servlet.ModelAndView;
  * This can only be used for payment for order in RazorPay.
  */
 @Controller
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class SkillZagResource {
 	
 	private RazorpayClient client;
